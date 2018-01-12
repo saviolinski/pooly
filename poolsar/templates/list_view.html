@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+
+
+
+<script>
+
+{% block jquery %}
+
+{% for question in latest_question_list %}
+var endpoint = "api/index/data/"
+var defaultData{{ question.strid }} = []
+var labels{{ question.strid }} = [];
+
+$.ajax({
+    method: "GET",
+    url: endpoint,
+    success: function(data){
+        labels{{ question.strid }} = data.labels{{ question.strid }}
+        defaultData{{ question.strid }} = data.default{{ question.strid }}
+        console.log()
+        setChart{{ question.strid }}()
+    },
+    error: function(error_data){
+        console.log("error")
+        console.log(error_data)
+
+    }
+})
+
+
+
+function setChart{{ question.strid }}(){
+    var ctx = document.getElementById("myChart{{ question.strid }}");
+    var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: labels{{ question.strid }},
+        datasets: [{
+            label: '# of Votes',
+            data: defaultData{{ question.strid }},
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+        }]
+    },
+    options: {
+        legend: {
+        display:false
+    },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+            }],
+            xAxes: [{
+                ticks: {
+                    beginAtZero:true
+                },
+            }]
+        }
+    }
+
+});
+}
+
+{% endfor %}
+{% endblock %}
+
+</script>
+
+
+
+{% block content %}
+
+
+
+
+<h1>{{ title }}</h1>
+<div class='col-sm-8 col-md-offset-2 text-center'>
+
+    </br>
+    <form method="GET" action="">
+        <input type="text" name="q" placeholder="Polla-search" value="{{ request.GET.q }}"/>
+        <input type="submit" value="Search"/>
+    </form>
+    </br></br></br>
+    <div class='row'>
+        <div class='col-sm-12'>
+           {% for question in latest_question_list %}
+            <div class='text-center'><p>{{ question.user }} asking: </p>
+        <h3>{{ question.question_text }}</h3>
+
+        </br>
+            <canvas id="myChart{{ question.strid }}" width="400" height="200"></canvas>
+        </br></br></br></br></br></br>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{{ question.get_absolute_url }}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</div>
+
+{% endblock content %}
+
