@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block content %}
-<h1>CREATE VIEW</h1>
-
+<div class='col-sm-6 col-sm-offset-3'>
+<h1>ASKERE</h1>
+</br>
 <form method="post" action="">{% csrf_token %}
-{{ form.as_p }}
+{{ form|crispy }}
+
 <input type="submit" value="Poll it" />
 </form>
-
+</div>
 {% endblock content %}

@@ -1,6 +1,7 @@
 from django.http import HttpResponse, Http404, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.views import generic
 from django.db.models import Q
@@ -67,27 +68,28 @@ def polls_results(request, slug):
     }
     return render(request, "polls/results.html", context)
 
+@login_required
 def polls_create(request):
-    if not request.user.is_authenticated():
-        raise Http404
-
     form = QuestionForm(request.POST or None)
     if form.is_valid():
+        choice = form.cleaned_data.get('choice')
         instance = form.save(commit=False)
         instance.user = request.user
+        instance.save()
+        new_choice = Choice(question=instance, choice_text=choice)
+        new_choice.save()
+        instance.choice = new_choice
         instance.save()
         messages.success(request, "zrobiono")
         return HttpResponseRedirect(reverse("polls:index"))
     context = {
-        "form": form
+        "form": form,
     }
     return render(request, "polls/create.html", context)
 
 
+@login_required
 def polls_edit(request, slug):
-    if not request.user.is_authenticated():
-        raise Http404
-
     obj = get_object_or_404(Question, slug=slug)
     form = QuestionForm(request.POST or None, instance=obj)
     if form.is_valid():
@@ -102,16 +104,15 @@ def polls_edit(request, slug):
     return render(request, "polls/create.html", context)
 
 
+@login_required
 def polls_delete(request, slug):
-    if not request.user.is_authenticated():
-        raise Http404
-
     obj = get_object_or_404(Question, slug=slug)
     obj.delete()
     messages.success(request, "usunieto")
     return redirect("polls:index")
 
 
+@login_required
 def vote(request, slug):
     # if not request.user.is_authenticated():
     #     raise Http404
