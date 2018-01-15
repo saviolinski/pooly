@@ -8,7 +8,8 @@ from views import (
     polls_edit,
     polls_results,
     get_chart,
-    vote
+    vote,
+    add_choice
 
 )
 
@@ -22,5 +23,6 @@ urlpatterns = [
     url(r'^(?P<slug>[\w-]+)/delete/$', polls_delete, name='delete'),
     url(r'^(?P<slug>[\w-]+)/results/$', polls_results, name='results'),
     url(r'^(?P<slug>[\w-]+)/vote/$', vote, name='vote'),
+    url(r'^(?P<slug>[\w-]+)/add_choice/$', add_choice, name='add-choice'),
 
 ]

@@ -39,20 +39,28 @@ function setChart{{ question.strid }}(){
             label: '# of Votes',
             data: defaultData{{ question.strid }},
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(139, 93, 207, 0.5)',
+                'rgba(166, 132, 216, 0.5)',
+                'rgba(185, 162, 220, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(139, 93, 207, 1)',
+                'rgba(166, 132, 216, 1)',
+                'rgba(185, 162, 220, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)'
             ],
             borderWidth: 1,
         }]
@@ -88,26 +96,67 @@ function setChart{{ question.strid }}(){
 
 
 
-    <div class='row'>
-        <div class='col-sm-12'>
+<div class='col-sm-8 col-md-offset-2 text-center pilar'>
+        <div class="col-sm-12">
         </br>
-            <div class='text-center'><p>{{ question.user }} asking: </p>
-        <h3>{{ question.question_text }}</h3>
+         <div class='text-center'><p>{{ question.user }} asking: </p>
+            <h3>{{ question.question_text }}</h3>
 
-        </br>
-            <canvas id="myChart{{ question.strid }}" width="400" height="200"></canvas>
-        </br></br></br></br></br></br>
+            <div>
+            <canvas id="myChart{{ question.strid }}" width="800" height="500"></canvas>
+            </div>
         </div>
-    </div>
-    </div>
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'polls:vote' question.slug %}" method="post">
-{% csrf_token %}
-{% for choice in question.choice_set.all %}
-    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
-    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
-{% endfor %}
-<input type="submit" value="Vote" />
-</form>
+    <div class="col-sm-6 col-sm-offset-3 votedornot">
+
+            {% if request.user not in voters %}
+        <div class="col-sm-12">
+        <div class="btn-group">
+            <form action="{% url 'polls:vote' question.slug %}" method="post">
+            {% csrf_token %}
+            <button type="button" class="btn btn-default dropdown-toggle vote" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-object-align-bottom"></span> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+            {% for choice in choiceset %}
+            <li class="text-center" style="padding: 5px;"><button type="submit" class="btn btn-light butt" name="choice" value="{{ choice.id }}">{{ choice.choice_text }}</button></li>
+            {% endfor %}
+             </ul>
+            </form>
+        </div>
+        </div>
+
+            {% else %}
+            <div class="col-sm-12 votedornot">
+            <span class="label label-danger">Already voted</span>
+            </div>
+            {% endif %}
+<div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+        </div>
+    {% if request.user not in question.askers  %}
+        <div class="col-sm-6 col-sm-offset-3">
+        <form action="{% url 'polls:add-choice' question.slug %}" method="post">{% csrf_token %}
+
+            <div class="input-group">
+            <input type="text" class="form-control" placeholder="your choice" name="choicetext">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit">Submit</button>
+            </span>
+            </div>
+        </form>
+        </div>
+
+            {% endif %}
+
+
+
+<div class="fb-comments" data-href="{{ request.build_absolute_uri }}" data-numposts="5">
+</div>
+
+
+
+</div>
+
+
+
 {% endblock content %}

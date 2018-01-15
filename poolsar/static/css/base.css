@@ -1,7 +1,57 @@
 h1 {
-    color: #777777;
+    color: #7a3ea0;
 }
 
-.row.bottom-buffer {
-    margin-bottom: 120px;
+a {
+    color: #7a3ea0;
 }
+.row.bottom-buffer {
+    margin-bottom: 30px;
+}
+
+.col-sm-2.top-buffer {
+    margin-top: 100px;
+}
+.centerblock {
+  display: table;
+  margin: auto;
+}
+
+.repaired {
+    margin-left: 16.66666667%;
+    width: 66.66666667%;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+}
+
+.butt {
+    display: block;
+    width: 100%;
+    color: #944dff;
+
+}
+
+.vote {
+    background-color: #9f42d1;
+    background-image: none;
+    color: white;
+}
+
+.pilar {
+    background-color: white;
+    padding: 60px;
+}
+
+.nawbar {
+    background-color: white;
+    color: #7a3ea0;
+}
+
+.votedornot {
+    padding: 30px;
+}
+

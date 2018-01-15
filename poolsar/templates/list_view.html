@@ -40,20 +40,28 @@ function setChart{{ question.strid }}(){
             label: '# of Votes',
             data: defaultData{{ question.strid }},
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
+                'rgba(139, 93, 207, 0.5)',
+                'rgba(166, 132, 216, 0.5)',
+                'rgba(185, 162, 220, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
+                'rgba(215, 206, 229, 0.5)',
             ],
             borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
+                'rgba(139, 93, 207, 1)',
+                'rgba(166, 132, 216, 1)',
+                'rgba(185, 162, 220, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)',
+                'rgba(215, 206, 229, 1)'
             ],
             borderWidth: 1,
         }]
@@ -91,40 +99,40 @@ function setChart{{ question.strid }}(){
 
 
 
-
-<div class='col-sm-8 col-md-offset-2 text-center'>
-
-
-    <div class='bottom-buffer row'>
+<div class='bottom-buffer row'>
     <form method="GET" action="">
         <div class="col-sm-6 col-sm-offset-3">
         <div class="input-group">
-        <input class="form-control" type="text" name="q" placeholder="Polla-search" value="{{ request.GET.q }}"/>
+        <input class="form-control" type="text" name="q" placeholder="Searchapolla" value="{{ request.GET.q }}"/>
             <span class="input-group-btn">
-                <button class="btn btn-default" type="submit">Search . . . <i class="fa fa-search"></i></button>
+                <button class="btn btn-default" type="submit">Search  <i class="fa fa-search"></i></button>
             </span>
             </div>
         </div>
     </form>
     </div>
+
+<div class='col-sm-8 col-md-offset-2 text-center pilar'>
+    {% if not latest_question_list %}
+    <h3>No polls are available with this keyword.</h3>
+    {% endif %}
+
+
     <div class='row'>
         <div class='col-sm-12'>
            {% for question in latest_question_list %}
             <div class='text-center'><p>{{ question.user }} asking: </p>
-        <h3><a href="{{ question.get_absolute_url }}">{{ question.question_text }}</a></h3>
+        <h3><a href="{{ question.get_absolute_url }}"> >> {{ question.question_text }} << </a></h3>
 
         </br>
-            <canvas id="myChart{{ question.strid }}" width="400" height="200"></canvas>
+            <canvas id="myChart{{ question.strid }}" width="800" height="500"></canvas>
         </br></br></br></br></br></br>
             {% endfor %}
         </div>
     </div>
 </div>
 
-{% if latest_question_list %}
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+
 
 </div>
 
