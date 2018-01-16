@@ -13,7 +13,7 @@ class Question(models.Model):
     question_text = models.CharField(max_length=200)
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
     timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
-    askers = []
+
 
     def __unicode__(self):
         return self.question_text
@@ -35,10 +35,18 @@ class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
-    voters = []
 
     def __unicode__(self):
         return self.choice_text
+
+class Voted(models.Model):
+    vote_count = models.IntegerField(default=0)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, default=1)
+    choice = models.ForeignKey(Choice, on_delete=models.CASCADE)
+
+    def __unicode__(self):
+        return self.vote_count
+
 
 def create_slug(instance, new_slug=None):
     slug = slugify(instance.question_text)

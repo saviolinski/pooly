@@ -109,7 +109,11 @@ function setChart{{ question.strid }}(){
 
     <div class="col-sm-6 col-sm-offset-3 votedornot">
 
-            {% if request.user not in voters %}
+            {% if user_voted %}
+            <div class="col-sm-12 votedornot">
+            <span class="label label-danger">Already voted</span>
+            </div>
+            {% else %}
         <div class="col-sm-12">
         <div class="btn-group">
             <form action="{% url 'polls:vote' question.slug %}" method="post">
@@ -126,14 +130,11 @@ function setChart{{ question.strid }}(){
         </div>
         </div>
 
-            {% else %}
-            <div class="col-sm-12 votedornot">
-            <span class="label label-danger">Already voted</span>
-            </div>
             {% endif %}
+
 <div class="fb-like" data-href="{{ request.build_absolute_uri }}" data-layout="button" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
         </div>
-    {% if request.user not in question.askers  %}
+    {% if user_asked.count < 1 and request.user.is_authenticated %}
         <div class="col-sm-6 col-sm-offset-3">
         <form action="{% url 'polls:add-choice' question.slug %}" method="post">{% csrf_token %}
 
@@ -143,10 +144,9 @@ function setChart{{ question.strid }}(){
                 <button class="btn btn-default" type="submit">Submit</button>
             </span>
             </div>
-        </form>
-        </div>
-
-            {% endif %}
+            </form>
+            </div>
+    {% endif %}
 
 
 
