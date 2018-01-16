@@ -2,72 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36018968-3f57-4f05-9ef8-3e755da61eab" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" afterPath="$PROJECT_DIR$/accounts/views.py" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change beforePath="$PROJECT_DIR$/polls/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/polls/migrations/0001_initial.py" />
-      <change beforePath="$PROJECT_DIR$/polls/models.py" afterPath="$PROJECT_DIR$/polls/models.py" />
-      <change beforePath="$PROJECT_DIR$/polls/templates/polls/detail.html" afterPath="$PROJECT_DIR$/polls/templates/polls/detail.html" />
       <change beforePath="$PROJECT_DIR$/polls/views.py" afterPath="$PROJECT_DIR$/polls/views.py" />
-      <change beforePath="$PROJECT_DIR$/poolsar/settings.py" afterPath="$PROJECT_DIR$/poolsar/settings.py" />
-      <change beforePath="$PROJECT_DIR$/poolsar/wsgi.py" afterPath="$PROJECT_DIR$/poolsar/wsgi.py" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/base.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/changelists.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/dashboard.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/fonts.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/forms.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/login.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/rtl.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/css/widgets.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/fonts/LICENSE.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/fonts/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/fonts/Roboto-Bold-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/fonts/Roboto-Light-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/fonts/Roboto-Regular-webfont.woff" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/LICENSE" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/README.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/calendar-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/gis/move_vertex_off.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/gis/move_vertex_on.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-addlink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-alert.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-calendar.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-changelink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-clock.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-deletelink.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-no.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-unknown-alt.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-unknown.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/icon-yes.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/inline-delete.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/search.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/selector-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/sorting-icons.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/tooltag-add.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/img/tooltag-arrowright.svg" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/SelectBox.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/SelectFilter2.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/actions.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/actions.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/admin/DateTimeShortcuts.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/admin/RelatedObjectLookups.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/calendar.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/collapse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/collapse.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/core.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/inlines.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/inlines.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/jquery.init.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/prepopulate.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/prepopulate.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/timeparse.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/urlify.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/vendor/jquery/LICENSE-JQUERY.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/vendor/jquery/jquery.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/vendor/jquery/jquery.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/vendor/xregexp/LICENSE-XREGEXP.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/admin/js/vendor/xregexp/xregexp.min.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/base.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../static_cdn/css/base.css" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -78,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/polls/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1098">
-              <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="25" />
+            <state relative-caret-position="-1824">
+              <caret line="42" column="6" lean-forward="false" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
               <folding>
                 <element signature="e#0#81#0" expanded="true" />
               </folding>
@@ -103,7 +40,7 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/polls/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="774">
+            <state relative-caret-position="234">
               <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -144,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/accounts/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+            <state relative-caret-position="324">
+              <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -215,7 +152,6 @@
         <option value="$PROJECT_DIR$/templates/login_form.html" />
         <option value="$PROJECT_DIR$/polls/templates/polls/create.html" />
         <option value="$PROJECT_DIR$/poolsar/urls.py" />
-        <option value="$PROJECT_DIR$/accounts/views.py" />
         <option value="$PROJECT_DIR$/templates/base/css.html" />
         <option value="$PROJECT_DIR$/polls/forms.py" />
         <option value="$PROJECT_DIR$/polls/urls.py" />
@@ -225,9 +161,10 @@
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/poolsar/settings.py" />
         <option value="$PROJECT_DIR$/poolsar/wsgi.py" />
-        <option value="$PROJECT_DIR$/polls/views.py" />
         <option value="$PROJECT_DIR$/polls/templates/polls/detail.html" />
         <option value="$PROJECT_DIR$/polls/models.py" />
+        <option value="$PROJECT_DIR$/polls/views.py" />
+        <option value="$PROJECT_DIR$/accounts/views.py" />
       </list>
     </option>
   </component>
@@ -260,6 +197,11 @@
             <path>
               <item name="poolsar" type="b2602c69:ProjectViewProjectNode" />
               <item name="poolsar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="poolsar" type="b2602c69:ProjectViewProjectNode" />
+              <item name="poolsar" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="poolsar" type="b2602c69:ProjectViewProjectNode" />
@@ -720,14 +662,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accounts/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="43" column="33" lean-forward="false" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/polls/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -741,16 +675,6 @@
         <state relative-caret-position="36">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="31" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/polls/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -770,9 +694,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/polls/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1824">
+          <caret line="42" column="6" lean-forward="false" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#81#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/polls/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
+        <state relative-caret-position="234">
           <caret line="43" column="64" lean-forward="false" selection-start-line="43" selection-start-column="64" selection-end-line="43" selection-end-column="64" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -780,13 +714,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/polls/views.py">
+    <entry file="file://$PROJECT_DIR$/polls/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1098">
-          <caret line="76" column="8" lean-forward="true" selection-start-line="76" selection-start-column="8" selection-end-line="77" selection-end-column="25" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#81#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accounts/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="27" column="15" lean-forward="true" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

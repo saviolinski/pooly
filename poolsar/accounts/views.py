@@ -14,6 +14,8 @@ from .forms import UserLoginForm, UserRegisterForm
 def login_view(request):
     title = "Login"
     next = request.GET.get("next")
+    if next:
+        next = next.replace("vote/", "")
     form = UserLoginForm(request.POST or None)
     if form.is_valid():
         username = form.cleaned_data.get("username")
@@ -31,6 +33,8 @@ def login_view(request):
 
 def register_view(request):
     next = request.GET.get("next")
+    if next:
+        next = next.replace("vote/", "")
     title = "Register"
     form = UserRegisterForm(request.POST or None)
     if form.is_valid():

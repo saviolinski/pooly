@@ -30,7 +30,7 @@ def get_chart(request):
             items[labels].append(answer.choice_text)
         for answer in question.choice_set.order_by('-votes').all():
             votes_count = answer.voted_set.count()
-            items[votes].append(votes_count)
+            items[votes].append(answer.votes)
         taglab = "labels{}".format(question.id)
         tagdef = "default{}".format(question.id)
         data[taglab] = items[labels]
